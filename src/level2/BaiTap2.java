@@ -6,10 +6,25 @@ import java.util.Set;
 
 public class BaiTap2 {
     public static void main(String[] args){
-        System.out.print("Input: ");
+        System.out.print("Input a string: ");
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        String s = sc.nextLine();
+        //
+        System.out.println("Is it a Palindrome?");
+        System.out.print(isPalindrome(s));
+    }
 
-        
+    static boolean isPalindrome(String s){
+        int left = 0;
+        int right = s.length() - 1;
+
+        while (left < right){
+            if (s.charAt(left) != s.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
     }
 }
